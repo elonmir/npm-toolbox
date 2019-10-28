@@ -3,7 +3,7 @@
 Just checkout the repository and run
 
 ```bash
-wanker build
+wanker fap
 ```
 
 After the build you should have something similar to that:

@@ -16,6 +16,7 @@ CONTAINER="npm-tools"
 BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
 PORT=${PORT:="3000"}
+INTERACTIVE=${INTERACTIVE:="-it"}
 
 # Commands
 key="$1"
@@ -25,7 +26,7 @@ if [ $1 ]
 fi
 
 WORKSPACE_ROOT="docker run --name npm-tools-bash --user=root --dns $DNS_SERVER -v $BASEDIR/hosts:/etc/hosts -i -t --rm $CONTAINER"
-WORKSPACE_RUN="docker run --name npm-tools-$key-$(date "+%Y.%m.%d-%H.%M.%S"|base32) -it --user=$UID:$GID -p $PORT:$PORT  -v $PWD:/tmp/ --rm $CONTAINER"
+WORKSPACE_RUN="docker run --name npm-tools-$key-$(date "+%Y.%m.%d-%H.%M.%S"|base32) $INTERACTIVE --user=$UID:$GID -p $PORT:$PORT  -v $PWD:/tmp/ --rm $CONTAINER"
 
 case $key in
     fap)

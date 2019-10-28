@@ -1,0 +1,48 @@
+#!/bin/sh
+# General variables
+GREEN='\033[0;32m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+SEPERATOR="${WHITE}----------------------------------------------------------------${NC}"
+
+# Project related variables
+PREFIX="${GREEN}[Npm Toolbox]${WHITE}"
+
+# Important configs
+CONTAINER="npm-tools"
+DNS_SERVER="192.168.178.1"
+
+# Define base dir of script
+BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
+
+PORT=${PORT:="3000"}
+
+# Project custom variables
+COMPOSE="docker"
+
+WORKSPACE_ROOT="$COMPOSE run --name npm-tools-bash --user=root --dns $DNS_SERVER -v $BASEDIR/hosts:/etc/hosts -i -t --rm $CONTAINER"
+WORKSPACE_RUN="docker run --name npm-tools -it --user=$UID:$GID --dns $DNS_SERVER -p $PORT:$PORT  -v $PWD:/tmp/ --rm $CONTAINER"
+
+# Commands
+key="$1"
+if [ $1 ]
+    then
+        shift
+fi
+
+case $key in
+    build)
+        flags=$@
+        echo "${PREFIX} Build container: $CONTAINER ...${NC}"
+        docker build $flags -t npm-tools .
+    ;;
+    -s|ssh|bash)
+        echo "${PREFIX} Connect to $CONTAINER container...${NC}"
+        $WORKSPACE_ROOT bash -l
+        ;;
+
+    *)
+        echo "${PREFIX} Run command: $key with $@"
+        $WORKSPACE_RUN $key $@
+        ;;
+esac

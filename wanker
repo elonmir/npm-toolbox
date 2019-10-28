@@ -31,7 +31,7 @@ if [ $1 ]
 fi
 
 case $key in
-    build)
+    fap)
         flags=$@
         echo "${PREFIX} Build container: $CONTAINER ...${NC}"
         docker build $flags -t npm-tools .

@@ -35,3 +35,13 @@ Just add the commands to your **.bashrc** or whatever shell you are using file.
 alias npm="/some/path/npm-toolbox/wanker npm"
 alias vue="/some/path/npm-toolbox/wanker vue"
 ```
+
+### Special info for vul ui
+
+To run **vue ui** you have to add some params
+
+```bash
+vue ui --headless --port 8000 --host 0.0.0.0
+```
+
+Thanks to https://stackoverflow.com/questions/57743092/vue-ui-is-not-working-through-docker-compose

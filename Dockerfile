@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:13
 
 RUN npm install -g is-up-cli
 RUN npm install -g caniuse-cmd

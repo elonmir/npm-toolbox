@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build --no-cache -t npm-tools .
+      run: docker build -t npm-tools .
     - name: Test container methods
       run: |
         ./wanker npm

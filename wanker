@@ -10,17 +10,14 @@ PREFIX="${GREEN}[Npm Toolbox]${WHITE}"
 
 # Important configs
 CONTAINER="npm-tools"
-DNS_SERVER="192.168.178.1"
+DNS_SERVER=${DNS_SERVER:="localhost"}
 
 # Define base dir of script
 BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
 PORT=${PORT:="3000"}
 
-# Project custom variables
-COMPOSE="docker"
-
-WORKSPACE_ROOT="$COMPOSE run --name npm-tools-bash --user=root --dns $DNS_SERVER -v $BASEDIR/hosts:/etc/hosts -i -t --rm $CONTAINER"
+WORKSPACE_ROOT="docker run --name npm-tools-bash --user=root --dns $DNS_SERVER -v $BASEDIR/hosts:/etc/hosts -i -t --rm $CONTAINER"
 WORKSPACE_RUN="docker run --name npm-tools -it --user=$UID:$GID --dns $DNS_SERVER -p $PORT:$PORT  -v $PWD:/tmp/ --rm $CONTAINER"
 
 # Commands

@@ -14,5 +14,5 @@ jobs:
       run: docker build -t npm-tools .
     - name: Test container methods
       run: |
-        INTERACTIVE=" " ./wanker npm
-        INTERACTIVE=" " ./wanker vue
+        INTERACTIVE=" " ./wanker npm -v
+        INTERACTIVE=" " ./wanker vue -V

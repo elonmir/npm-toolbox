@@ -14,5 +14,7 @@ jobs:
       run: ./wanker fap
     - name: Test container methods
       run: |
-        INTERACTIVE=" " ./wanker npm -v
-        INTERACTIVE=" " ./wanker vue -V
+        ./wanker npm -v
+        ./wanker vue -V
+      env:
+        INTERACTIVE: " "

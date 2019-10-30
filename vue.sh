@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./wanker vue
+./wanker vue $@

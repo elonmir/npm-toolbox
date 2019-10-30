@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./wanker node
+./wanker node $@

@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/elonmir/npm-toolbox/workflows/Build%20docker%20image/badge.svg)](https://github.com/elonmir/Build%20docker%20image/actions)
+[![Actions Status](https://github.com/elonmir/npm-toolbox/workflows/Build%20docker%20image/badge.svg)](https://github.com/elonmir/npm-toolbox/actions)
 
 ## Getting started
 

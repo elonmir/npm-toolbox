@@ -38,7 +38,7 @@ alias npm="/some/path/npm-toolbox/wanker npm"
 alias vue="/some/path/npm-toolbox/wanker vue"
 ```
 
-### Special info for vul ui
+### Special info for vui ui
 
 To run **vue ui** you have to add some params
 
@@ -47,3 +47,11 @@ vue ui --headless --port 8000 --host 0.0.0.0
 ```
 
 Thanks to https://stackoverflow.com/questions/57743092/vue-ui-is-not-working-through-docker-compose
+
+### Special info for json server
+
+To run **json-server ui** you have to add some params
+
+```bash
+json-server --host 0.0.0.0
+```

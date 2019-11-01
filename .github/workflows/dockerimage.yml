@@ -16,6 +16,7 @@ jobs:
       run: |
         ./wanker npm -v
         ./wanker vue -V
+        ./wanker json-server -v
       env:
         INTERACTIVE: " "
     - name: Test shell scripts
@@ -23,5 +24,6 @@ jobs:
         ./npm.sh -v
         ./vue.sh -V
         ./node.sh -v
+        ./json-server.sh -v
       env:
         INTERACTIVE: " "
